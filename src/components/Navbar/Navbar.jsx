@@ -1,37 +1,28 @@
-import React from "react";
-import Button from "../../styles/Button";
-import { Container, Left, Logo, NavContainer, Right } from "./navbarStyle";
+import React, { useEffect, useState } from "react";
+import { NavContainer, Nav, NavLogo } from "./navbarStyle";
+import logo from "../../Image/logo1.png";
+import Burger from "../../Reuseable/Burger";
 
 function Navbar() {
+  const [navColor, setNavColor] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY >= 80 ? setNavColor(true) : setNavColor(false);
+    };
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <Container>
+    <Nav navbar={navColor}>
       <NavContainer>
-        <Left>
-          <Logo>
-            <h3>JAY</h3>
-          </Logo>
-        </Left>
-        <Right>
-          <ul>
-            <li>
-              <a href="/">About</a>
-            </li>
-            <li>
-              <a href="/">Skills</a>
-            </li>
-            <li>
-              <a href="/">Projects</a>
-            </li>
-            <li>
-              <a href="/">Contact</a>
-            </li>
-            <li>
-              <Button href="Resume" text="Resume" />
-            </li>
-          </ul>
-        </Right>
+        <NavLogo to="home">
+          <img src={logo} alt="JohnAhachi" />
+          John&nbsp;<span>Ahachi</span>
+        </NavLogo>
+        <Burger navbar={navColor} />
       </NavContainer>
-    </Container>
+    </Nav>
   );
 }
 

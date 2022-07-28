@@ -1,35 +1,57 @@
-import React from "react";
-import Button from "../../styles/Button";
-import ContainerStyle from "../../styles/ContainerStyle";
-import { Container, Wrapper, Left, Right, CTA } from "./LandingpageStyled";
+// import down from "../../Image/mouse-cursor down.png";
+import Typewriter from "typewriter-effect";
+import {
+  Container,
+  ContainerWrapper,
+  ContentWrapper,
+  Heading,
+  Subheading,
+  Content,
+  HeroLink,
+} from "./LandingpageStyled";
 
 function Landpage() {
   return (
-    <ContainerStyle>
-      <Container>
-        <Wrapper>
-          <Left>
-            <h4>
-              👋 HELLO THERE, MY NAME IS <strong>JOHN</strong>
-            </h4>
-            <h1>I am a Frontend Developer</h1>
-            <hr />
-            <p>
-              I craft high-performing, beautiful and rich interactive websites
-              <br />
-              that are:
-              <strong>
-                conversion-focused, brand-accurate & people-friendly
-              </strong>
-            </p>
-            <CTA>
-              <Button href="/Contact" text="Connect with Me" />
-            </CTA>
-          </Left>
-          <Right></Right>
-        </Wrapper>
-      </Container>
-    </ContainerStyle>
+    <Container>
+      <ContainerWrapper>
+        <ContentWrapper>
+          <Subheading>
+            👋 HELLO THERE, MY NAME IS <span>JOHN</span>
+          </Subheading>
+          <Heading>Frontend Developer.</Heading>
+
+          <Content>
+            <div>
+              I build high-performing, beautiful, clean user interfaces and rich
+              interactive websites with React, JavaScript and some other cools
+              libraries and frameworks that are:&nbsp;
+              <span>
+                <Typewriter
+                  options={{
+                    strings: [
+                      "mobile responsive",
+                      "brand-accurate",
+                      "and maintainable",
+                    ],
+                    autoStart: true,
+                    loop: true,
+                    delay: 75,
+                  }}
+                />
+              </span>
+            </div>
+          </Content>
+          <HeroLink href="/" padding="1.5rem 2rem" bg="transparent">
+            Connect with Me
+          </HeroLink>
+        </ContentWrapper>
+        {/* <Right>
+          <a href="/About">
+            <img src={down} alt="mouse" />
+          </a>
+        </Right> */}
+      </ContainerWrapper>
+    </Container>
   );
 }
 

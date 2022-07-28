@@ -1,42 +1,50 @@
 import React from "react";
-import ContainerStyle from "../../styles/ContainerStyle";
-import { Title, Wrapper, Left, Right, CTA } from "./aboutStyled";
-// import aboutPic from "../../Image/aboutMe.jpg";
-import Button from "../../styles/Button";
+import {
+  Container,
+  Title,
+  Wrapper,
+  AboutContent,
+  AboutSection,
+  Img,
+  ImgWrapper,
+  AboutLink,
+} from "./aboutStyled";
+
 function About() {
   return (
-    <ContainerStyle>
-      <Wrapper>
-        <Left></Left>
-        <Right>
-          <Title>About Me</Title>
-          <h4>Hi there, I'm John!</h4>
-          <h1>I'm am Frontend Engineer who get the job done</h1>
-          <p>
-            I have been offering professional website which brings clients idea
-            to life. I help convert a vission and an idea into meaningful and
-            useful software products. Having the ability transform requirments
-            into useful software helps me prioritze tasks, iterate fast and
-            deliver faster.
+    <AboutSection>
+      <Container>
+        <Title>About Me</Title>
+        <Wrapper>
+          <ImgWrapper>
+            <Img src={require("../../Image/jpg/aboutMe.jpg")} alt="skills" />
+          </ImgWrapper>
+          <AboutContent>
+            <h1>
+              Hello! I'm John Ahachi a Frontend Developer who gets the job done.
+            </h1>
             <p>
-              I am also productivity nerd and love discovering new ways and
-              system to design my ideal day. I enjoy watching science and
-              technology programs on youtube, reading books about growth and
-              self development.
+              I like to code things from scratch, and enjoy bringing ideas to
+              life, whether that be websites or applications. My goal is to
+              always build products that provide rich interactive, high
+              performing and pixel-perfect experience.
             </p>
-          </p>
-          <p>
-            Take a look at my portfolio work and lets see if we can work
-            together on your next project.
-          </p>
-          <hr />
-          <CTA>
-            <Button text="Download my Resume" />
-            <Button text="My Work" />
-          </CTA>
-        </Right>
-      </Wrapper>
-    </ContainerStyle>
+            <p>
+              I have developed a passion for the software industry over the
+              years and enjoy what I do. I prefer to keep learning, continue
+              challenging myself, and do interesting things that matter.
+            </p>
+            <p>
+              Take a look at my portfolio work and lets see if we can work
+              together on your next project.
+            </p>
+            <AboutLink>
+              <a href="/">Resume</a>
+            </AboutLink>
+          </AboutContent>
+        </Wrapper>
+      </Container>
+    </AboutSection>
   );
 }
 
