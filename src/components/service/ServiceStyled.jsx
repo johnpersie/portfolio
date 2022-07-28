@@ -17,7 +17,7 @@ export const PageHeadingContainer = styled.div`
   margin-bottom: 5rem;
   margin-top: 5rem;
 `;
-export const PageHeading = styled.p`
+export const PageHeading = styled.h1`
   color: #101522;
   font-size: clamp(2.3rem, 3vw, 5rem);
   font-weight: 500;
